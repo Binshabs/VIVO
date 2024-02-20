@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% if category %}
+<div class="container-fluid mb-3">
+
+ <h1 class="hed mt-5 mb-2">{{category.name}}</h1>
+ <img class="can rounded-5 " src="{{category.image.url}}" style="margin-left: 600px;" width="30%" height="600" alt="">
+ <h5 class="des mt-4 mb-3 pb-3 pt-3">{{category.desc}}</h5></div>
+{% else %}
+
+
+
+{% endif %}
+<div class="container-fluid">
+    <div class="card-group mb-3" >
+      {% for i in products %}
+        {% if i.available %}
+        <a href="{% url 'shop:details' i.id %}">
+        <div class="cad border p-3 mb-5 bg-body rounded mb-4 me-2 mr-5" style="padding-left: 200px;">
+          <img src="{{i.image.url}}" height="270px" class="card-img-top rounded-4" alt="...">
+          <div class="card-body" style="margin-left: 50px;">
+            <h4 class="card-title">{{i.name}}</h4>
+            <h6 class="card-text" style="color: blue;">${{i.price}}</h6>
+            
+          </div>
+        </div>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+
+{% endblock %} 
