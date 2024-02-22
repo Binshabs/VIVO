@@ -8,8 +8,8 @@
       
         <a href="{% url 'shop:details' i.id %}">
         <div class="cad border p-3 mb-5 bg-body rounded mb-4 me-2 mr-5">
-          <img src="{{i.image.url}}" height="400px" width="1000px" class="card-img-top rounded-4 " alt="...">
-          <div class="card-body">
+          <img src="{{i.image.url}}" height="250px" width="500px" class="card-img-top rounded-4 " alt="...">
+          <div class="card-body" style="margin-left: 70px;">
             <h3 class="card-title">{{i.name}}</h3>
             <h5 class="card-text">${{i.price}}</h5>
             <h6 class="card-text">{{i.category}}</h6>

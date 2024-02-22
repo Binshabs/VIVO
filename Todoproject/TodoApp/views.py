@@ -15,10 +15,10 @@ def  Home(request,c_slug=None):
         product_list=Product.objects.all().filter(available=True) 
         #PAGINATOR
     
-    paginator=Paginator(product_list,10)
+    paginator=Paginator(product_list,30)
     
     try:
-        page=int(request.GET.get('page','3'))
+        page=int(request.GET.get('page','1'))
     except:
         page=1
         
@@ -36,5 +36,4 @@ def  Home(request,c_slug=None):
 def Details(req,id):
     data=Product.objects.get(id=id)
     return render(req,'details.html',{'data':data})
-
 
