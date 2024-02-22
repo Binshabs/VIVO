@@ -2,7 +2,9 @@ from django.shortcuts import render,get_object_or_404
 from .models import Product,Category
 from django.core.paginator import Paginator,EmptyPage,InvalidPage
 # Create your views here.
-def Home(request,c_slug=None):
+
+
+def  Home(request,c_slug=None):
     c_page=None
     product_list=None
     if c_slug!=None:
@@ -13,10 +15,10 @@ def Home(request,c_slug=None):
         product_list=Product.objects.all().filter(available=True) 
         #PAGINATOR
     
-    paginator=Paginator(product_list,5)
+    paginator=Paginator(product_list,10)
     
     try:
-        page=int(request.GET.get('page','1'))
+        page=int(request.GET.get('page','3'))
     except:
         page=1
         
