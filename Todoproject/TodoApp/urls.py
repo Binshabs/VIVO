@@ -3,7 +3,8 @@ from . import views
 app_name='shop'
 urlpatterns = [
     path('',views.Home,name='home'),
-    path('<slug:c_slug>/',views.Home,name='product_by_category'),
+    path('phone/',views.phone,name='phone'),
+    path('<slug:c_slug>/',views.phone,name='product_by_category'),
     path('details/<int:id>',views.Details,name='details'),
    
    

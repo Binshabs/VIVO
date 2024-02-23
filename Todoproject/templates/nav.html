@@ -15,15 +15,18 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active hh ps-5 ms-5" aria-current="page" style="color: black; font-weight: 900;" href="{% url 'shop:home' %}">Home</a>
-        
+
+          <li class="nav-item">
+            <a class="nav-link active hh ps-5 ms-5" aria-current="page" href="{% url 'shop:phone' %}" style="color: black; font-weight: 900;">Products</a>
+          </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="{% url 'shop:home' %}" id="navbarDropdown" role="button" style="color: black; font-weight: 900;" data-bs-toggle="dropdown"
             aria-expanded="false">
-            Products
+            Category
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="{% url 'shop:home' %}">ALL products</a></li>
+            <li><a class="dropdown-item" href="{% url 'shop:home' %}">All Products</a></li>
             {% for link in links %}
             <li><a class="dropdown-item" href="{{link.get_url}}">{{link.name}}</a></li>
 

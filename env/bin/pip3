@@ -1,4 +1,4 @@
-#!/media/arya/db3eaa97-2d8b-4e41-8ff5-a815fc072330/binsha/vivo1/env/bin/python3
+#!/home/synnefo/Desktop/vivoproj/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
