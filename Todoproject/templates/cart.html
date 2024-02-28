@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 
-<div class="rw row mt-4 mb-5">
+<div class="rw row mt-4 mb-5 ms-5 me-5">
     <div class="col-lg-8 btn-light">
         <h5 class="fr">from saved Address</h5>
     {% for cartitem in cart %}
@@ -15,12 +15,12 @@
             </h4>
         </div>
         <div class="col-lg-7 border mt-2 mb-2">
-            <h5 class="pro mt-3">{{cartitem.product}}</h5>
+            <h3 class="pro mt-3">{{cartitem.product}}</h3>
             <h6 class="des">{{cartitem.product.desc}}</h6>
             <h4 class="pr">${{cartitem.product.price}}</h4>
         </div>
         <div class="col-lg-3">
-            <a href="{% url 'cartapp:fullremove' cartitem.product.id %}" class="cn btn btn-">Remove</a>
+            <a href="{% url 'cartapp:fullremove' cartitem.product.id %}" class="cn btn btn-" style="color: red;">Remove</a>
         </div>
     </div>
     {% endfor %}

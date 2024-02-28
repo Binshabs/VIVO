@@ -21,9 +21,12 @@
                 <h5 class="ct mt-2" >category: {{data.category}}</h5>
 
                 {% if data.stock >= 1 %}
-
+                {% if user.is_authenticated %}
                 <!-- <button class="btn btn-primary me-3">Add to cart</button> -->
                 <a href="{% url 'cartapp:addcart' data.id %}" type="button" class="btn btn-warning me-3">Add to cart</a>
+                {% else %}
+                <a href="{% url 'auth:login' %}" class="btn btn-danger me-2" style="color: black; font-weight: 900;" type="button">Please Login</a>
+                {% endif %}
                 
                 {% else %}
 
